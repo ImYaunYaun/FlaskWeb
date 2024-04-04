@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}eatWhat{% endblock %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card container">
+    <div class="card-header">
+        <label for="eatWhat">eatWhat</label>
+        <form id="form" action="#" method="post">
+            <button type="submit" value="submit" class="btn btn-primary">吃什麼</button>
+        </form>
+    </div>
+    <div class="card-body">
+
+        {% if Ans !="" %}
+        {{ Ans }}
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock %}

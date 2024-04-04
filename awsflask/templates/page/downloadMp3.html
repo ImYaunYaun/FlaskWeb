@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}downloadMp3{% endblock %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="card container">
+    <div class="card-header">
+        Youtube Music Downlad
+    </div>
+    <div class="card-body">
+        <form id="form" action="#" method="post">
+            <div class="form-group" action="#" method="post">
+                下載路徑
+                <input class="form-control form-control-lg" name="downloadroot" type="text" placeholder="下載路徑">
+                <label for="ytMusic">Youtube Music Url</label>
+                <input type="url" name="yturl" class="form-control" placeholder="ytMusicUrl" required="required">
+            </div>
+            <button type="submit" value="submit" class="btn btn-primary">下載</button>
+        </form>
+    </div>
+    <div class="card-header">
+        History
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">標題</th>
+                    <th scope="col">連結</th>
+                    <th scope="col">縮圖</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in downlodaData %}
+                <tr>
+                    <td> {{row[0]}} </td>
+                    <td> {{row[1]}} </td>
+                    <td> <a href="{{row[2]}}"> {{row[2]}}</a> </td>
+                    <td> <img src="{{row[3]}}" alt="" srcset="" width="266.56px" height="150px"> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
